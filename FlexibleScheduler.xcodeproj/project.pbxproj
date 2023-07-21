@@ -13,6 +13,10 @@
 		2C1AE0D42A5162090019D435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AE0D22A5162090019D435 /* Main.storyboard */; };
 		2C1AE0D62A51620A0019D435 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AE0D52A51620A0019D435 /* Assets.xcassets */; };
 		2C1AE0D92A51620A0019D435 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AE0D72A51620A0019D435 /* LaunchScreen.storyboard */; };
+		2CC640572A6A8785005EDDC6 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC640562A6A8785005EDDC6 /* ScheduleViewController.swift */; };
+		2CC640592A6A8824005EDDC6 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC640582A6A8824005EDDC6 /* ScheduleView.swift */; };
+		2CC6405B2A6A8863005EDDC6 /* ScheduleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6405A2A6A8863005EDDC6 /* ScheduleView.xib */; };
+		2CC6405D2A6A88EF005EDDC6 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6405C2A6A88EF005EDDC6 /* ScheduleModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		2C1AE0D52A51620A0019D435 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C1AE0D82A51620A0019D435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C1AE0DA2A51620A0019D435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CC640562A6A8785005EDDC6 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		2CC640582A6A8824005EDDC6 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		2CC6405A2A6A8863005EDDC6 /* ScheduleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleView.xib; sourceTree = "<group>"; };
+		2CC6405C2A6A88EF005EDDC6 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,10 @@
 				2C1AE0CC2A5162090019D435 /* AppDelegate.swift */,
 				2C1AE0CE2A5162090019D435 /* SceneDelegate.swift */,
 				2C1AE0D02A5162090019D435 /* ViewController.swift */,
+				2CC640562A6A8785005EDDC6 /* ScheduleViewController.swift */,
+				2CC640582A6A8824005EDDC6 /* ScheduleView.swift */,
+				2CC6405C2A6A88EF005EDDC6 /* ScheduleModel.swift */,
+				2CC6405A2A6A8863005EDDC6 /* ScheduleView.xib */,
 				2C1AE0D22A5162090019D435 /* Main.storyboard */,
 				2C1AE0D52A51620A0019D435 /* Assets.xcassets */,
 				2C1AE0D72A51620A0019D435 /* LaunchScreen.storyboard */,
@@ -126,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C1AE0D92A51620A0019D435 /* LaunchScreen.storyboard in Resources */,
+				2CC6405B2A6A8863005EDDC6 /* ScheduleView.xib in Resources */,
 				2C1AE0D62A51620A0019D435 /* Assets.xcassets in Resources */,
 				2C1AE0D42A5162090019D435 /* Main.storyboard in Resources */,
 			);
@@ -138,9 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC6405D2A6A88EF005EDDC6 /* ScheduleModel.swift in Sources */,
+				2CC640592A6A8824005EDDC6 /* ScheduleView.swift in Sources */,
 				2C1AE0D12A5162090019D435 /* ViewController.swift in Sources */,
 				2C1AE0CD2A5162090019D435 /* AppDelegate.swift in Sources */,
 				2C1AE0CF2A5162090019D435 /* SceneDelegate.swift in Sources */,
+				2CC640572A6A8785005EDDC6 /* ScheduleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
