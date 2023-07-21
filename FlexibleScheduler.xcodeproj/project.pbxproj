@@ -17,6 +17,8 @@
 		2CC640592A6A8824005EDDC6 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC640582A6A8824005EDDC6 /* ScheduleView.swift */; };
 		2CC6405B2A6A8863005EDDC6 /* ScheduleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6405A2A6A8863005EDDC6 /* ScheduleView.xib */; };
 		2CC6405D2A6A88EF005EDDC6 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6405C2A6A88EF005EDDC6 /* ScheduleModel.swift */; };
+		2CC640602A6AB34B005EDDC6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC6405F2A6AB34B005EDDC6 /* Realm */; };
+		2CC640622A6AB34B005EDDC6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC640612A6AB34B005EDDC6 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC640622A6AB34B005EDDC6 /* RealmSwift in Frameworks */,
+				2CC640602A6AB34B005EDDC6 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,19 +68,43 @@
 		2C1AE0CB2A5162090019D435 /* FlexibleScheduler */ = {
 			isa = PBXGroup;
 			children = (
+				2CC640662A6AB3AD005EDDC6 /* Controller */,
+				2CC640652A6AB3A5005EDDC6 /* View */,
+				2CC640642A6AB394005EDDC6 /* Model */,
 				2C1AE0CC2A5162090019D435 /* AppDelegate.swift */,
 				2C1AE0CE2A5162090019D435 /* SceneDelegate.swift */,
 				2C1AE0D02A5162090019D435 /* ViewController.swift */,
-				2CC640562A6A8785005EDDC6 /* ScheduleViewController.swift */,
-				2CC640582A6A8824005EDDC6 /* ScheduleView.swift */,
-				2CC6405C2A6A88EF005EDDC6 /* ScheduleModel.swift */,
-				2CC6405A2A6A8863005EDDC6 /* ScheduleView.xib */,
 				2C1AE0D22A5162090019D435 /* Main.storyboard */,
 				2C1AE0D52A51620A0019D435 /* Assets.xcassets */,
 				2C1AE0D72A51620A0019D435 /* LaunchScreen.storyboard */,
 				2C1AE0DA2A51620A0019D435 /* Info.plist */,
 			);
 			path = FlexibleScheduler;
+			sourceTree = "<group>";
+		};
+		2CC640642A6AB394005EDDC6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2CC6405C2A6A88EF005EDDC6 /* ScheduleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2CC640652A6AB3A5005EDDC6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2CC6405A2A6A8863005EDDC6 /* ScheduleView.xib */,
+				2CC640582A6A8824005EDDC6 /* ScheduleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2CC640662A6AB3AD005EDDC6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2CC640562A6A8785005EDDC6 /* ScheduleViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +123,10 @@
 			dependencies = (
 			);
 			name = FlexibleScheduler;
+			packageProductDependencies = (
+				2CC6405F2A6AB34B005EDDC6 /* Realm */,
+				2CC640612A6AB34B005EDDC6 /* RealmSwift */,
+			);
 			productName = FlexibleScheduler;
 			productReference = 2C1AE0C92A5162090019D435 /* FlexibleScheduler.app */;
 			productType = "com.apple.product-type.application";
@@ -123,6 +155,9 @@
 				Base,
 			);
 			mainGroup = 2C1AE0C02A5162090019D435;
+			packageReferences = (
+				2CC6405E2A6AB34B005EDDC6 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 2C1AE0CA2A5162090019D435 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -372,6 +407,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2CC6405E2A6AB34B005EDDC6 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2CC6405F2A6AB34B005EDDC6 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC6405E2A6AB34B005EDDC6 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		2CC640612A6AB34B005EDDC6 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CC6405E2A6AB34B005EDDC6 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2C1AE0C12A5162090019D435 /* Project object */;
 }

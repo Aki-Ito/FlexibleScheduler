@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import Realm
+import RealmSwift
+
 struct ScheduleModel{
     
 }
