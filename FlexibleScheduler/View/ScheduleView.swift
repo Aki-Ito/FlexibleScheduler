@@ -11,6 +11,8 @@ class ScheduleView: UIView {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNib()

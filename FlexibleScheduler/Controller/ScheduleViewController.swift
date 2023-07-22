@@ -19,15 +19,22 @@ class ScheduleViewController: UIViewController {
         self.view.addSubview(scheduleView!)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func registerSettings(){
+        guard let collectionView = scheduleView?.collectionView else {
+            return
+        }
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
-    */
 
+}
+
+extension ScheduleViewController: UICollectionViewDelegate,UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
 }
