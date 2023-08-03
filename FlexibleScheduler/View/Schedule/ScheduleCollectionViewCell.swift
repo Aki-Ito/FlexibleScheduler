@@ -14,7 +14,7 @@ class ScheduleCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        backgroundColorView.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.1)
+//        backgroundColorView.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.4)
     }
 
 }

@@ -15,6 +15,9 @@ final class AddScheduleViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        addScheduleView = AddScheduleView(frame: view.bounds)
+        self.view.addSubview(addScheduleView!)
+        registerSettings()
     }
     
     private func registerSettings(){
