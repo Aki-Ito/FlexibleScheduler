@@ -13,6 +13,10 @@
 		2C1AE0D42A5162090019D435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AE0D22A5162090019D435 /* Main.storyboard */; };
 		2C1AE0D62A51620A0019D435 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AE0D52A51620A0019D435 /* Assets.xcassets */; };
 		2C1AE0D92A51620A0019D435 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AE0D72A51620A0019D435 /* LaunchScreen.storyboard */; };
+		2C2B38E52A7A466300520E96 /* AddScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2B38E42A7A466300520E96 /* AddScheduleViewController.swift */; };
+		2C2B38E72A7A468A00520E96 /* AddScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2B38E62A7A468A00520E96 /* AddScheduleView.swift */; };
+		2C2B38E92A7A469B00520E96 /* AddScheduleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2B38E82A7A469B00520E96 /* AddScheduleView.xib */; };
+		2C2B38EE2A7A472600520E96 /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2B38ED2A7A472600520E96 /* RealmUtil.swift */; };
 		2CA7ED782A6B9B1600301C06 /* ScheduleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7ED762A6B9B1600301C06 /* ScheduleCollectionViewCell.swift */; };
 		2CA7ED792A6B9B1600301C06 /* ScheduleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7ED772A6B9B1600301C06 /* ScheduleCollectionViewCell.xib */; };
 		2CC640572A6A8785005EDDC6 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC640562A6A8785005EDDC6 /* ScheduleViewController.swift */; };
@@ -32,6 +36,10 @@
 		2C1AE0D52A51620A0019D435 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C1AE0D82A51620A0019D435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C1AE0DA2A51620A0019D435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C2B38E42A7A466300520E96 /* AddScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleViewController.swift; sourceTree = "<group>"; };
+		2C2B38E62A7A468A00520E96 /* AddScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleView.swift; sourceTree = "<group>"; };
+		2C2B38E82A7A469B00520E96 /* AddScheduleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddScheduleView.xib; sourceTree = "<group>"; };
+		2C2B38ED2A7A472600520E96 /* RealmUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
 		2CA7ED762A6B9B1600301C06 /* ScheduleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CA7ED772A6B9B1600301C06 /* ScheduleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleCollectionViewCell.xib; sourceTree = "<group>"; };
 		2CC640562A6A8785005EDDC6 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -72,7 +80,7 @@
 		2C1AE0CB2A5162090019D435 /* FlexibleScheduler */ = {
 			isa = PBXGroup;
 			children = (
-				2CA7ED752A6B1FC100301C06 /* Utils */,
+				2C2B38EC2A7A471200520E96 /* Utils */,
 				2CC640662A6AB3AD005EDDC6 /* Controller */,
 				2CC640652A6AB3A5005EDDC6 /* View */,
 				2CC640642A6AB394005EDDC6 /* Model */,
@@ -87,11 +95,32 @@
 			path = FlexibleScheduler;
 			sourceTree = "<group>";
 		};
-		2CA7ED752A6B1FC100301C06 /* Utils */ = {
+		2C2B38EC2A7A471200520E96 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2C2B38ED2A7A472600520E96 /* RealmUtil.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		2C2B38EF2A7A494A00520E96 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				2CC640582A6A8824005EDDC6 /* ScheduleView.swift */,
+				2CC6405A2A6A8863005EDDC6 /* ScheduleView.xib */,
+				2CA7ED762A6B9B1600301C06 /* ScheduleCollectionViewCell.swift */,
+				2CA7ED772A6B9B1600301C06 /* ScheduleCollectionViewCell.xib */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		2C2B38F02A7A495900520E96 /* AddSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				2C2B38E62A7A468A00520E96 /* AddScheduleView.swift */,
+				2C2B38E82A7A469B00520E96 /* AddScheduleView.xib */,
+			);
+			path = AddSchedule;
 			sourceTree = "<group>";
 		};
 		2CC640642A6AB394005EDDC6 /* Model */ = {
@@ -105,10 +134,8 @@
 		2CC640652A6AB3A5005EDDC6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2CC6405A2A6A8863005EDDC6 /* ScheduleView.xib */,
-				2CC640582A6A8824005EDDC6 /* ScheduleView.swift */,
-				2CA7ED762A6B9B1600301C06 /* ScheduleCollectionViewCell.swift */,
-				2CA7ED772A6B9B1600301C06 /* ScheduleCollectionViewCell.xib */,
+				2C2B38F02A7A495900520E96 /* AddSchedule */,
+				2C2B38EF2A7A494A00520E96 /* Schedule */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -117,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				2CC640562A6A8785005EDDC6 /* ScheduleViewController.swift */,
+				2C2B38E42A7A466300520E96 /* AddScheduleViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -191,6 +219,7 @@
 				2CC6405B2A6A8863005EDDC6 /* ScheduleView.xib in Resources */,
 				2C1AE0D62A51620A0019D435 /* Assets.xcassets in Resources */,
 				2C1AE0D42A5162090019D435 /* Main.storyboard in Resources */,
+				2C2B38E92A7A469B00520E96 /* AddScheduleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,10 +233,13 @@
 				2CA7ED782A6B9B1600301C06 /* ScheduleCollectionViewCell.swift in Sources */,
 				2CC6405D2A6A88EF005EDDC6 /* ScheduleModel.swift in Sources */,
 				2CC640592A6A8824005EDDC6 /* ScheduleView.swift in Sources */,
+				2C2B38EE2A7A472600520E96 /* RealmUtil.swift in Sources */,
 				2C1AE0D12A5162090019D435 /* ViewController.swift in Sources */,
 				2C1AE0CD2A5162090019D435 /* AppDelegate.swift in Sources */,
 				2C1AE0CF2A5162090019D435 /* SceneDelegate.swift in Sources */,
 				2CC640572A6A8785005EDDC6 /* ScheduleViewController.swift in Sources */,
+				2C2B38E52A7A466300520E96 /* AddScheduleViewController.swift in Sources */,
+				2C2B38E72A7A468A00520E96 /* AddScheduleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

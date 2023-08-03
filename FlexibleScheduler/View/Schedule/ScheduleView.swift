@@ -16,6 +16,7 @@ class ScheduleView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNib()
+        collectionView.backgroundColor = .clear
     }
     
     required init?(coder: NSCoder) {

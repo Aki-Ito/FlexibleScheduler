@@ -24,8 +24,7 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                 </imageView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KZB-25-MbG">
-                    <rect key="frame" x="20" y="159" width="353" height="639"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U7W-Yd-jVW">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -37,13 +36,13 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KZB-25-MbG" secondAttribute="trailing" constant="20" id="LNK-eN-bXU"/>
+                <constraint firstItem="KZB-25-MbG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="GyB-uv-UMv"/>
+                <constraint firstItem="KZB-25-MbG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Oad-JH-HnO"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Bbk-HZ-2n2" secondAttribute="trailing" id="R3k-Gk-C3h"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="KZB-25-MbG" secondAttribute="bottom" constant="20" id="ZWj-Ty-lfX"/>
-                <constraint firstItem="KZB-25-MbG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="caZ-dm-H6e"/>
                 <constraint firstAttribute="bottom" secondItem="Bbk-HZ-2n2" secondAttribute="bottom" id="eaa-BQ-InC"/>
+                <constraint firstItem="KZB-25-MbG" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="hOI-y1-LoO"/>
                 <constraint firstItem="Bbk-HZ-2n2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="hvD-XZ-QZf"/>
-                <constraint firstItem="KZB-25-MbG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="imf-Sp-IVi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="KZB-25-MbG" secondAttribute="trailing" id="w9I-9t-4SV"/>
                 <constraint firstItem="Bbk-HZ-2n2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="wJg-5g-hIi"/>
             </constraints>
             <point key="canvasLocation" x="138" y="20"/>
