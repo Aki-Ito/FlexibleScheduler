@@ -9,21 +9,24 @@ import UIKit
 
 final class AddScheduleViewController: UIViewController {
     
-    private var addScheduleView: AddScheduleView?
+    private lazy var addScheduleView = AddScheduleView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        addScheduleView = AddScheduleView(frame: view.bounds)
-        self.view.addSubview(addScheduleView!)
+        view = addScheduleView
         registerSettings()
     }
     
+    override func loadView() {
+        super.loadView()
+        
+        
+    }
+    
     private func registerSettings(){
-        addScheduleView?.FirstPlanTextField.delegate = self
-        addScheduleView?.SecondPlanTextField.delegate = self
-        addScheduleView?.ThirdPlanTextField.delegate = self
+        addScheduleView.FirstPlanTextField.delegate = self
+        addScheduleView.SecondPlanTextField.delegate = self
+        addScheduleView.ThirdPlanTextField.delegate = self
     }
     
     @IBAction func tappedSaveButton(){

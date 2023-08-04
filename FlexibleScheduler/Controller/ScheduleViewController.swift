@@ -9,23 +9,24 @@ import UIKit
 
 final class ScheduleViewController: UIViewController {
     
-    private var scheduleView: ScheduleView?
+    private lazy var scheduleView =  ScheduleView()
     private var scheduleData: [ScheduleModel] = []
     private var cellHeight: CGFloat = 108
     let screenWidth = UIScreen.main.bounds.width
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        scheduleView = ScheduleView(frame: view.bounds)
-        self.view.addSubview(scheduleView!)
-        
         registerSettings()
     }
     
+    override func loadView() {
+        super.loadView()
+        
+        view = scheduleView
+    }
+    
     private func registerSettings(){
-        guard let collectionView = scheduleView?.collectionView else {
+        guard let collectionView = scheduleView.collectionView else {
             return
         }
         collectionView.delegate = self
@@ -37,19 +38,35 @@ final class ScheduleViewController: UIViewController {
         layout.scrollDirection = .vertical
         collectionView.setCollectionViewLayout(layout, animated: true)
     }
-
+    
+    @IBAction func tappedAddButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+       let nextController =  storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+        if let sheet = nextController.sheetPresentationController{
+            sheet.detents = [
+                .custom(resolver: { context in
+                    0.8 * context.maximumDetentValue
+                })
+            ]
+        }
+        
+        present(nextController, animated: true)
+    }
+    
+    
+    
+    
 }
 
 extension ScheduleViewController: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        scheduleData.count
+        //        scheduleData.count
         return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ScheduleCollectionViewCell
         cell.layer.cornerRadius = 10
-        cell.layer.masksToBounds = true
         return cell
     }
 }

@@ -9,6 +9,8 @@ import UIKit
 
 class AddScheduleView: UIView {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var FirstPlanTextField: UITextField!
     @IBOutlet weak var SecondPlanTextField: UITextField!
     @IBOutlet weak var ThirdPlanTextField: UITextField!
