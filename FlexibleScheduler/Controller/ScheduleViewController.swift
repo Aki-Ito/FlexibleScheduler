@@ -11,7 +11,7 @@ import RealmSwift
 
 final class ScheduleViewController: UIViewController {
     
-    private lazy var scheduleView =  ScheduleView()
+    lazy var scheduleView =  ScheduleView()
     private var realmUtil = RealmUtil.shared
     private var fetchedData: Results<ScheduleModel>?
     private var cellHeight: CGFloat = 108
@@ -59,7 +59,7 @@ final class ScheduleViewController: UIViewController {
     
     @IBAction func tappedAddButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-       let nextController =  storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+        let nextController =  storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
         if let sheet = nextController.sheetPresentationController{
             sheet.detents = [
                 .custom(resolver: { context in
@@ -69,6 +69,12 @@ final class ScheduleViewController: UIViewController {
         }
         present(nextController, animated: true)
     }
+    
+    @IBAction func tappedDeleteAllButton(_ sender: Any) {
+        realmUtil.deleteAllData()
+        self.reloadData()
+    }
+    
 }
 
 extension ScheduleViewController: UICollectionViewDelegate,UICollectionViewDataSource{

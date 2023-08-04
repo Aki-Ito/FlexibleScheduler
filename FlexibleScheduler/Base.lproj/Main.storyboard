@@ -26,7 +26,11 @@
                                     <action selector="tappedAddButton:" destination="BYZ-38-t0r" id="0EM-nD-TAF"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="trash" id="Kwq-gP-uIe"/>
+                            <barButtonItem systemItem="trash" id="Kwq-gP-uIe">
+                                <connections>
+                                    <action selector="tappedDeleteAllButton:" destination="BYZ-38-t0r" id="zmX-KQ-ZGc"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                 </viewController>

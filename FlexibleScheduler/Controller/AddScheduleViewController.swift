@@ -36,6 +36,10 @@ final class AddScheduleViewController: UIViewController {
         let startTime: Date = addScheduleView.startTimeDatePicker.date
         
         realmUtil.addData(firstPlan: firstPlan, secondPlan: secondPlan, thirdPlan: thirdPlan, limit: limit, startTime: startTime)
+        
+        let previousNC = self.presentingViewController as! UINavigationController
+        let previousController = previousNC.viewControllers[previousNC.viewControllers.count - 1] as! ScheduleViewController
+        previousController.scheduleView.collectionView.reloadData()
     }
     
     
