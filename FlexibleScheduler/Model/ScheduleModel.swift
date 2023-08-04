@@ -17,3 +17,12 @@ class ScheduleModel: Object,ObjectKeyIdentifiable{
     @Persisted var limitTime: Double
     @Persisted var startTime: Date
 }
+
+extension ScheduleModel{
+    static let dateFormatUtil = DateFormatUtil.shared
+    static func caluculateTime(startTime: Date, limit: TimeInterval) -> String{
+        let endTime: Date = Date(timeInterval: limit, since: startTime)
+        let formatedEndTime: String = dateFormatUtil.dateFormat(date: endTime)
+        return formatedEndTime
+    }
+}

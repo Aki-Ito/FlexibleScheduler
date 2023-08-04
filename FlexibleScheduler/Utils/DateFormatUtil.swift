@@ -14,7 +14,7 @@ struct DateFormatUtil{
         dateFormatter.calendar = Calendar(identifier: .gregorian)
         dateFormatter.locale = Locale(identifier: "ja_JP")
         dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
-        dateFormatter.dateFormat = "yyyy/MM/dd"
+        dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: date)
     }
 }

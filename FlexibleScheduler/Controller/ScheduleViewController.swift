@@ -13,6 +13,7 @@ final class ScheduleViewController: UIViewController {
     
     lazy var scheduleView =  ScheduleView()
     private var realmUtil = RealmUtil.shared
+    private var dateFormatUtil = DateFormatUtil.shared
     private var fetchedData: Results<ScheduleModel>?
     private var cellHeight: CGFloat = 108
     let screenWidth = UIScreen.main.bounds.width
@@ -87,6 +88,9 @@ extension ScheduleViewController: UICollectionViewDelegate,UICollectionViewDataS
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ScheduleCollectionViewCell
         cell.layer.cornerRadius = 10
         cell.scheduleLabel.text = fetchedData?[indexPath.row].firstSchedule
+        let startTime = dateFormatUtil.dateFormat(date: fetchedData?[indexPath.row].startTime ?? Date())
+        let endTime = ScheduleModel.caluculateTime(startTime: fetchedData?[indexPath.row].startTime ?? Date(), limit: fetchedData?[indexPath.row].limitTime ?? 0)
+        cell.timeLabel.text = "\(startTime)~\(endTime)"
         return cell
     }
 }
