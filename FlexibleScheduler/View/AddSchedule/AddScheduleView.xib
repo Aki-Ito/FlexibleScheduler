@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22138.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22113"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,8 +27,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="RWM-gS-OZ5">
-                    <rect key="frame" x="80" y="139" width="233" height="234"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="RWM-gS-OZ5">
+                    <rect key="frame" x="80" y="139" width="233" height="204"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CF9-ch-eXH">
                             <rect key="frame" x="0.0" y="0.0" width="233" height="48"/>
@@ -39,7 +40,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qXS-7W-PoF">
-                            <rect key="frame" x="0.0" y="93" width="233" height="48"/>
+                            <rect key="frame" x="0.0" y="78" width="233" height="48"/>
                             <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="7dD-dn-JO3"/>
@@ -48,7 +49,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PX7-rQ-6af">
-                            <rect key="frame" x="0.0" y="186" width="233" height="48"/>
+                            <rect key="frame" x="0.0" y="156" width="233" height="48"/>
                             <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="jg5-7P-BIp"/>
@@ -81,37 +82,37 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94y-v5-naw">
-                    <rect key="frame" x="36.666666666666657" y="421" width="320" height="320"/>
+                    <rect key="frame" x="24.666666666666657" y="391" width="344" height="327"/>
                     <subviews>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-TO-663">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
-                        </datePicker>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="hjm-EE-tIR">
-                            <rect key="frame" x="8" y="244" width="308" height="50"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="G0o-mR-4Tr">
+                            <rect key="frame" x="12" y="0.0" width="320" height="315"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="startTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0Y-GP-Yqe">
-                                    <rect key="frame" x="0.0" y="0.0" width="66" height="50"/>
-                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="HML-cB-Lsm">
-                                    <rect key="frame" x="94" y="0.0" width="218" height="50"/>
+                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-TO-663">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
                                 </datePicker>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="hjm-EE-tIR">
+                                    <rect key="frame" x="0.0" y="265" width="320" height="50"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="startTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0Y-GP-Yqe">
+                                            <rect key="frame" x="0.0" y="0.0" width="66" height="50"/>
+                                            <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="HML-cB-Lsm">
+                                            <rect key="frame" x="94" y="0.0" width="226" height="50"/>
+                                        </datePicker>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="NBa-TO-663" firstAttribute="leading" secondItem="94y-v5-naw" secondAttribute="leading" id="HhI-mj-8ZW"/>
-                        <constraint firstItem="hjm-EE-tIR" firstAttribute="leading" secondItem="94y-v5-naw" secondAttribute="leading" constant="8" id="LkG-mm-fqs"/>
-                        <constraint firstAttribute="trailing" secondItem="NBa-TO-663" secondAttribute="trailing" id="Mq5-Qm-cps"/>
-                        <constraint firstAttribute="trailing" secondItem="hjm-EE-tIR" secondAttribute="trailing" constant="4" id="VWc-nX-vv4"/>
-                        <constraint firstAttribute="height" constant="320" id="YLy-vi-kpo"/>
-                        <constraint firstAttribute="width" constant="320" id="YQq-0b-rnU"/>
-                        <constraint firstItem="NBa-TO-663" firstAttribute="top" secondItem="94y-v5-naw" secondAttribute="top" id="Zaw-IK-Pc1"/>
-                        <constraint firstItem="hjm-EE-tIR" firstAttribute="top" secondItem="NBa-TO-663" secondAttribute="bottom" constant="28" id="iIY-U3-0FY"/>
-                        <constraint firstItem="NBa-TO-663" firstAttribute="centerX" secondItem="94y-v5-naw" secondAttribute="centerX" id="zZk-Gl-3bu"/>
+                        <constraint firstAttribute="trailing" secondItem="G0o-mR-4Tr" secondAttribute="trailing" constant="12" id="5E7-6D-8Xa"/>
+                        <constraint firstAttribute="bottom" secondItem="G0o-mR-4Tr" secondAttribute="bottom" constant="12" id="V8T-0B-J5V"/>
+                        <constraint firstItem="G0o-mR-4Tr" firstAttribute="leading" secondItem="94y-v5-naw" secondAttribute="leading" constant="12" id="rHs-4j-DuU"/>
+                        <constraint firstItem="G0o-mR-4Tr" firstAttribute="top" secondItem="94y-v5-naw" secondAttribute="top" id="um8-lb-R7q"/>
                     </constraints>
                 </view>
             </subviews>
@@ -119,6 +120,7 @@
             <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="94y-v5-naw" firstAttribute="top" secondItem="RWM-gS-OZ5" secondAttribute="bottom" constant="48" id="6LF-Pb-9WL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="94y-v5-naw" secondAttribute="bottom" constant="100" id="6rh-vG-6UE"/>
                 <constraint firstItem="RWM-gS-OZ5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="80" id="Bi5-uC-4Oj"/>
                 <constraint firstItem="RWM-gS-OZ5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="80" id="TGO-p3-DP8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RWM-gS-OZ5" secondAttribute="trailing" constant="80" id="Td3-kj-bQJ"/>
