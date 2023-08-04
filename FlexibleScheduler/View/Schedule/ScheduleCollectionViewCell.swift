@@ -9,7 +9,7 @@ import UIKit
 
 class ScheduleCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var scheduleLabel: UILabel!
-    
+    @IBOutlet weak var timeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
       

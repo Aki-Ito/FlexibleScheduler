@@ -76,6 +76,7 @@
             <size key="customSize" width="353" height="63"/>
             <connections>
                 <outlet property="scheduleLabel" destination="3O4-eF-IKh" id="Jwo-cB-rMa"/>
+                <outlet property="timeLabel" destination="q92-dp-mHZ" id="nwW-wr-OLX"/>
             </connections>
             <point key="canvasLocation" x="278.62595419847327" y="24.647887323943664"/>
         </collectionViewCell>
