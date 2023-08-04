@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,7 +14,9 @@
                 <outlet property="FirstPlanTextField" destination="CF9-ch-eXH" id="6dx-FM-X33"/>
                 <outlet property="SecondPlanTextField" destination="qXS-7W-PoF" id="1jc-ae-QO2"/>
                 <outlet property="ThirdPlanTextField" destination="PX7-rQ-6af" id="Eq5-OG-5YL"/>
-                <outlet property="datePicker" destination="NBa-TO-663" id="xOn-vi-UxR"/>
+                <outlet property="backgroundView" destination="94y-v5-naw" id="Pze-gi-gKp"/>
+                <outlet property="limitTimeDatePicker" destination="NBa-TO-663" id="xOn-vi-UxR"/>
+                <outlet property="startTimeDatePicker" destination="HML-cB-Lsm" id="eVs-hb-z6a"/>
                 <outlet property="subTitleLabel" destination="YcB-dw-etg" id="NJ8-K4-reg"/>
                 <outlet property="titleLabel" destination="JLz-g6-sde" id="rOO-60-tuc"/>
             </connections>
@@ -63,9 +66,6 @@
                         <constraint firstAttribute="trailing" secondItem="qXS-7W-PoF" secondAttribute="trailing" id="uaM-PO-M1U"/>
                     </constraints>
                 </stackView>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-TO-663">
-                    <rect key="frame" x="36" y="433" width="321" height="216"/>
-                </datePicker>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLz-g6-sde">
                     <rect key="frame" x="82" y="60" width="193" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -80,17 +80,50 @@
                     <color key="textColor" name="AccentColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="94y-v5-naw">
+                    <rect key="frame" x="36.666666666666657" y="421" width="320" height="320"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-TO-663">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                        </datePicker>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="hjm-EE-tIR">
+                            <rect key="frame" x="8" y="244" width="308" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="startTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0Y-GP-Yqe">
+                                    <rect key="frame" x="0.0" y="0.0" width="66" height="50"/>
+                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="HML-cB-Lsm">
+                                    <rect key="frame" x="94" y="0.0" width="218" height="50"/>
+                                </datePicker>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="NBa-TO-663" firstAttribute="leading" secondItem="94y-v5-naw" secondAttribute="leading" id="HhI-mj-8ZW"/>
+                        <constraint firstItem="hjm-EE-tIR" firstAttribute="leading" secondItem="94y-v5-naw" secondAttribute="leading" constant="8" id="LkG-mm-fqs"/>
+                        <constraint firstAttribute="trailing" secondItem="NBa-TO-663" secondAttribute="trailing" id="Mq5-Qm-cps"/>
+                        <constraint firstAttribute="trailing" secondItem="hjm-EE-tIR" secondAttribute="trailing" constant="4" id="VWc-nX-vv4"/>
+                        <constraint firstAttribute="height" constant="320" id="YLy-vi-kpo"/>
+                        <constraint firstAttribute="width" constant="320" id="YQq-0b-rnU"/>
+                        <constraint firstItem="NBa-TO-663" firstAttribute="top" secondItem="94y-v5-naw" secondAttribute="top" id="Zaw-IK-Pc1"/>
+                        <constraint firstItem="hjm-EE-tIR" firstAttribute="top" secondItem="NBa-TO-663" secondAttribute="bottom" constant="28" id="iIY-U3-0FY"/>
+                        <constraint firstItem="NBa-TO-663" firstAttribute="centerX" secondItem="94y-v5-naw" secondAttribute="centerX" id="zZk-Gl-3bu"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="94y-v5-naw" firstAttribute="top" secondItem="RWM-gS-OZ5" secondAttribute="bottom" constant="48" id="6LF-Pb-9WL"/>
                 <constraint firstItem="RWM-gS-OZ5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="80" id="Bi5-uC-4Oj"/>
                 <constraint firstItem="RWM-gS-OZ5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="80" id="TGO-p3-DP8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RWM-gS-OZ5" secondAttribute="trailing" constant="80" id="Td3-kj-bQJ"/>
+                <constraint firstItem="94y-v5-naw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="iqX-dy-WsX"/>
                 <constraint firstItem="RWM-gS-OZ5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lBZ-N3-S6f"/>
-                <constraint firstItem="NBa-TO-663" firstAttribute="top" secondItem="RWM-gS-OZ5" secondAttribute="bottom" constant="60" id="mOl-EM-hTA"/>
-                <constraint firstItem="NBa-TO-663" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="36" id="oV9-oa-Gth"/>
-                <constraint firstItem="NBa-TO-663" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uev-qB-2MX"/>
             </constraints>
             <point key="canvasLocation" x="136.64122137404578" y="20.422535211267608"/>
         </view>
@@ -99,5 +132,8 @@
         <namedColor name="AccentColor">
             <color red="0.31400001049041748" green="0.42699998617172241" blue="0.84700000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

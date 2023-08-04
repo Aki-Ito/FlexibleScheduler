@@ -13,14 +13,12 @@ final class AddScheduleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = addScheduleView
         registerSettings()
     }
     
     override func loadView() {
         super.loadView()
-        
-        
+        view = addScheduleView
     }
     
     private func registerSettings(){

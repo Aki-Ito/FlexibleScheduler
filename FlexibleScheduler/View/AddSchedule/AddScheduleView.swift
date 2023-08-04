@@ -15,17 +15,25 @@ class AddScheduleView: UIView {
     @IBOutlet weak var SecondPlanTextField: UITextField!
     @IBOutlet weak var ThirdPlanTextField: UITextField!
     
-    @IBOutlet weak var datePicker: UIDatePicker!
-
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var limitTimeDatePicker: UIDatePicker!
+    
+    @IBOutlet weak var startTimeDatePicker: UIDatePicker!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNib()
-        datePicker.datePickerMode = .countDownTimer
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadNib()
+    }
+    
+    private func setupUI(){
+        limitTimeDatePicker.datePickerMode = .countDownTimer
+        backgroundView.layer.cornerRadius = 10
     }
     
     func loadNib() {

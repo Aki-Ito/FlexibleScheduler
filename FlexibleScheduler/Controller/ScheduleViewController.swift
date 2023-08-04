@@ -45,7 +45,7 @@ final class ScheduleViewController: UIViewController {
         if let sheet = nextController.sheetPresentationController{
             sheet.detents = [
                 .custom(resolver: { context in
-                    0.8 * context.maximumDetentValue
+                    0.9 * context.maximumDetentValue
                 })
             ]
         }
