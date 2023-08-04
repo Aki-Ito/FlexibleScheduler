@@ -14,10 +14,8 @@ class AddScheduleView: UIView {
     @IBOutlet weak var FirstPlanTextField: UITextField!
     @IBOutlet weak var SecondPlanTextField: UITextField!
     @IBOutlet weak var ThirdPlanTextField: UITextField!
-    
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var limitTimeDatePicker: UIDatePicker!
-    
     @IBOutlet weak var startTimeDatePicker: UIDatePicker!
     
     override init(frame: CGRect) {

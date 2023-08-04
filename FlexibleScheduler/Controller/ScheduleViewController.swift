@@ -52,10 +52,6 @@ final class ScheduleViewController: UIViewController {
         
         present(nextController, animated: true)
     }
-    
-    
-    
-    
 }
 
 extension ScheduleViewController: UICollectionViewDelegate,UICollectionViewDataSource{
