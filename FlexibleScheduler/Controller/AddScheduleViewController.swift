@@ -11,6 +11,7 @@ final class AddScheduleViewController: UIViewController {
     
     private lazy var addScheduleView = AddScheduleView()
     private var realmUtil = RealmUtil.shared
+    private var alertHelper = AlertHelper.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,20 +30,20 @@ final class AddScheduleViewController: UIViewController {
     }
     
     @IBAction func tappedSaveButton(){
-        let firstPlan: String = addScheduleView.FirstPlanTextField.text!
-        let secondPlan: String = addScheduleView.SecondPlanTextField.text!
-        let thirdPlan: String = addScheduleView.ThirdPlanTextField.text!
-        let limit: TimeInterval = addScheduleView.limitTimeDatePicker.countDownDuration
-        let startTime: Date = addScheduleView.startTimeDatePicker.date
-        
-        realmUtil.addData(firstPlan: firstPlan, secondPlan: secondPlan, thirdPlan: thirdPlan, limit: limit, startTime: startTime)
-        
-        let previousNC = self.presentingViewController as! UINavigationController
-        let previousController = previousNC.viewControllers[previousNC.viewControllers.count - 1] as! ScheduleViewController
-        previousController.scheduleView.collectionView.reloadData()
+        alertHelper.showAlertWithCancel(title: "保存しますか?", message: "選択してください", viewController: self) {
+            let firstPlan: String = self.addScheduleView.FirstPlanTextField.text!
+            let secondPlan: String = self.addScheduleView.SecondPlanTextField.text!
+            let thirdPlan: String = self.addScheduleView.ThirdPlanTextField.text!
+            let limit: TimeInterval = self.addScheduleView.limitTimeDatePicker.countDownDuration
+            let startTime: Date = self.addScheduleView.startTimeDatePicker.date
+            
+            self.realmUtil.addData(firstPlan: firstPlan, secondPlan: secondPlan, thirdPlan: thirdPlan, limit: limit, startTime: startTime)
+            
+            let previousNC = self.presentingViewController as! UINavigationController
+            let previousController = previousNC.viewControllers[previousNC.viewControllers.count - 1] as! ScheduleViewController
+            previousController.scheduleView.collectionView.reloadData()
+        }
     }
-    
-    
 }
 
 extension AddScheduleViewController: UITextFieldDelegate{

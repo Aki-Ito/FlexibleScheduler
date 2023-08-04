@@ -14,6 +14,7 @@ final class ScheduleViewController: UIViewController {
     lazy var scheduleView =  ScheduleView()
     private var realmUtil = RealmUtil.shared
     private var dateFormatUtil = DateFormatUtil.shared
+    private var alertHelper = AlertHelper.shared
     private var fetchedData: Results<ScheduleModel>?
     private var cellHeight: CGFloat = 108
     let screenWidth = UIScreen.main.bounds.width
@@ -72,8 +73,10 @@ final class ScheduleViewController: UIViewController {
     }
     
     @IBAction func tappedDeleteAllButton(_ sender: Any) {
-        realmUtil.deleteAllData()
-        self.reloadData()
+        alertHelper.showAlertWithCancel(title: "データを全て削除します", message: "次に進むとデータは全て消去されます", viewController: self) {
+            self.realmUtil.deleteAllData()
+            self.reloadData()
+        }
     }
     
 }
