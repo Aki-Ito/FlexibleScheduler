@@ -25,6 +25,7 @@
 		2CC6405D2A6A88EF005EDDC6 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6405C2A6A88EF005EDDC6 /* ScheduleModel.swift */; };
 		2CC640602A6AB34B005EDDC6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC6405F2A6AB34B005EDDC6 /* Realm */; };
 		2CC640622A6AB34B005EDDC6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2CC640612A6AB34B005EDDC6 /* RealmSwift */; };
+		2CEB22CE2A7D436B009ACDE8 /* sedgwick_co.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB22CD2A7D436B009ACDE8 /* sedgwick_co.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		2CC640582A6A8824005EDDC6 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		2CC6405A2A6A8863005EDDC6 /* ScheduleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleView.xib; sourceTree = "<group>"; };
 		2CC6405C2A6A88EF005EDDC6 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
+		2CEB22CD2A7D436B009ACDE8 /* sedgwick_co.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sedgwick_co.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		2C1AE0CB2A5162090019D435 /* FlexibleScheduler */ = {
 			isa = PBXGroup;
 			children = (
+				2CEB22CC2A7D4345009ACDE8 /* Fonts */,
 				2C2B38EC2A7A471200520E96 /* Utils */,
 				2CC640662A6AB3AD005EDDC6 /* Controller */,
 				2CC640652A6AB3A5005EDDC6 /* View */,
@@ -149,6 +152,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		2CEB22CC2A7D4345009ACDE8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2CEB22CD2A7D436B009ACDE8 /* sedgwick_co.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CEB22CE2A7D436B009ACDE8 /* sedgwick_co.ttf in Resources */,
 				2CA7ED792A6B9B1600301C06 /* ScheduleCollectionViewCell.xib in Resources */,
 				2C1AE0D92A51620A0019D435 /* LaunchScreen.storyboard in Resources */,
 				2CC6405B2A6A8863005EDDC6 /* ScheduleView.xib in Resources */,

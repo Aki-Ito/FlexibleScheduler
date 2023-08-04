@@ -8,13 +8,11 @@
 import UIKit
 
 class ScheduleCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var scheduleLabel: UILabel!
     
-    @IBOutlet weak var backgroundColorView: UIView!
-
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-//        backgroundColorView.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.4)
+      
     }
 
 }

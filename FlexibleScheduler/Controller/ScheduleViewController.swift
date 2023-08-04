@@ -86,6 +86,7 @@ extension ScheduleViewController: UICollectionViewDelegate,UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ScheduleCollectionViewCell
         cell.layer.cornerRadius = 10
+        cell.scheduleLabel.text = fetchedData?[indexPath.row].firstSchedule
         return cell
     }
 }
