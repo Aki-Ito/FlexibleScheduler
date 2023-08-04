@@ -6,23 +6,41 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 final class ScheduleViewController: UIViewController {
     
     private lazy var scheduleView =  ScheduleView()
-    private var scheduleData: [ScheduleModel] = []
+    private var realmUtil = RealmUtil.shared
+    private var fetchedData: Results<ScheduleModel>?
     private var cellHeight: CGFloat = 108
     let screenWidth = UIScreen.main.bounds.width
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerSettings()
+        self.fetchedData = realmUtil.fetchData()
+        self.reloadData()
     }
     
     override func loadView() {
         super.loadView()
         
         view = scheduleView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.fetchedData = realmUtil.fetchData()
+        self.reloadData()
+    }
+    
+    private func reloadData(){
+        guard let collectionView = scheduleView.collectionView else {
+            return
+        }
+        collectionView.reloadData()
     }
     
     private func registerSettings(){
@@ -49,15 +67,14 @@ final class ScheduleViewController: UIViewController {
                 })
             ]
         }
-        
         present(nextController, animated: true)
     }
 }
 
 extension ScheduleViewController: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //        scheduleData.count
-        return 2
+        guard let fetchedData = fetchedData else {return 0}
+        return fetchedData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

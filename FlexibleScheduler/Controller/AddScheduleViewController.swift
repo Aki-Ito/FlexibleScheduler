@@ -10,6 +10,7 @@ import UIKit
 final class AddScheduleViewController: UIViewController {
     
     private lazy var addScheduleView = AddScheduleView()
+    private var realmUtil = RealmUtil.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,13 @@ final class AddScheduleViewController: UIViewController {
     }
     
     @IBAction func tappedSaveButton(){
+        let firstPlan: String = addScheduleView.FirstPlanTextField.text!
+        let secondPlan: String = addScheduleView.SecondPlanTextField.text!
+        let thirdPlan: String = addScheduleView.ThirdPlanTextField.text!
+        let limit: TimeInterval = addScheduleView.limitTimeDatePicker.countDownDuration
+        let startTime: Date = addScheduleView.startTimeDatePicker.date
         
+        realmUtil.addData(firstPlan: firstPlan, secondPlan: secondPlan, thirdPlan: thirdPlan, limit: limit, startTime: startTime)
     }
     
     
