@@ -94,6 +94,9 @@ extension ScheduleViewController: UICollectionViewDelegate,UICollectionViewDataS
         let startTime = dateFormatUtil.dateFormat(date: fetchedData?[indexPath.row].startTime ?? Date())
         let endTime = ScheduleModel.caluculateTime(startTime: fetchedData?[indexPath.row].startTime ?? Date(), limit: fetchedData?[indexPath.row].limitTime ?? 0)
         cell.timeLabel.text = "\(startTime)~\(endTime)"
+        
+//        //MARK: delegate
+//        cell.scrollView.delegate = self
         return cell
     }
 }

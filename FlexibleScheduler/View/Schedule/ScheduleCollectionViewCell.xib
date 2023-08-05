@@ -43,24 +43,17 @@
                                 <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7u-xk-tQH">
-                                <rect key="frame" x="0.0" y="19.000000000000004" width="75" height="34.333333333333343"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCi-fe-I4r">
-                                <rect key="frame" x="260" y="19.000000000000004" width="75" height="34.333333333333343"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pTp-z6-1fA">
+                                <rect key="frame" x="113.66666666666666" y="46.333333333333336" width="115.66666666666666" height="25.666666666666664"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="pTp-z6-1fA" firstAttribute="centerX" secondItem="cbn-Wt-Rwt" secondAttribute="centerX" id="39q-Mw-tZO"/>
                             <constraint firstItem="aJy-UO-wMT" firstAttribute="top" secondItem="cbn-Wt-Rwt" secondAttribute="top" constant="8" id="BAG-r8-Evm"/>
+                            <constraint firstAttribute="bottom" secondItem="pTp-z6-1fA" secondAttribute="bottom" id="Ypp-KD-dtG"/>
                             <constraint firstItem="3O4-eF-IKh" firstAttribute="centerX" secondItem="cbn-Wt-Rwt" secondAttribute="centerX" id="erZ-EE-2B6"/>
                             <constraint firstItem="aJy-UO-wMT" firstAttribute="leading" secondItem="cbn-Wt-Rwt" secondAttribute="leading" constant="12" id="pKy-f1-oAP"/>
-                            <constraint firstItem="eCi-fe-I4r" firstAttribute="centerY" secondItem="cbn-Wt-Rwt" secondAttribute="centerY" id="vLN-Is-WEm"/>
-                            <constraint firstItem="k7u-xk-tQH" firstAttribute="centerY" secondItem="cbn-Wt-Rwt" secondAttribute="centerY" id="w3u-ej-TSg"/>
                             <constraint firstItem="3O4-eF-IKh" firstAttribute="centerY" secondItem="cbn-Wt-Rwt" secondAttribute="centerY" id="zKW-Zc-zYw"/>
                         </constraints>
                     </view>
@@ -75,6 +68,7 @@
             </constraints>
             <size key="customSize" width="353" height="63"/>
             <connections>
+                <outlet property="pageControl" destination="pTp-z6-1fA" id="PK4-v8-Z9P"/>
                 <outlet property="scheduleLabel" destination="3O4-eF-IKh" id="Jwo-cB-rMa"/>
                 <outlet property="timeLabel" destination="q92-dp-mHZ" id="nwW-wr-OLX"/>
             </connections>
