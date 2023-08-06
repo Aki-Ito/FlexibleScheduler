@@ -26,6 +26,8 @@ class ScheduleCollectionViewCell: UICollectionViewCell {
     }
     
     
-
+    @IBAction func pageControl(_ sender: Any) {
+        
+    }
 }
 

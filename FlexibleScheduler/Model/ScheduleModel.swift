@@ -20,9 +20,15 @@ class ScheduleModel: Object,ObjectKeyIdentifiable{
 
 extension ScheduleModel{
     static let dateFormatUtil = DateFormatUtil.shared
+    //MARK: 始まりから終わりの時間を計算しておく
     static func caluculateTime(startTime: Date, limit: TimeInterval) -> String{
         let endTime: Date = Date(timeInterval: limit, since: startTime)
         let formatedEndTime: String = dateFormatUtil.dateFormat(date: endTime)
         return formatedEndTime
+    }
+    
+    //MARK: スケジュール1~3をまとめて配列にしておく
+    static func makeScheduleArray(first: String, second: String, third: String) -> [String]{
+        return [first,second,third]
     }
 }
