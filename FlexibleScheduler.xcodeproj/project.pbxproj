@@ -29,6 +29,9 @@
 		2CEB22D02A7D4BE2009ACDE8 /* DateFormatUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEB22CF2A7D4BE2009ACDE8 /* DateFormatUtil.swift */; };
 		2CEB22D32A7D77C1009ACDE8 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEB22D22A7D77C1009ACDE8 /* AlertHelper.swift */; };
 		2CEB22D52A81E51A009ACDE8 /* ActionSheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEB22D42A81E51A009ACDE8 /* ActionSheetHelper.swift */; };
+		2CEB22D72A826DEE009ACDE8 /* ChangeSchedulePriorityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEB22D62A826DEE009ACDE8 /* ChangeSchedulePriorityController.swift */; };
+		2CEB22D92A826E12009ACDE8 /* SchedulePriorityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEB22D82A826E12009ACDE8 /* SchedulePriorityView.swift */; };
+		2CEB22DB2A826E23009ACDE8 /* SchedulePriorityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEB22DA2A826E23009ACDE8 /* SchedulePriorityView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		2CEB22CF2A7D4BE2009ACDE8 /* DateFormatUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatUtil.swift; sourceTree = "<group>"; };
 		2CEB22D22A7D77C1009ACDE8 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		2CEB22D42A81E51A009ACDE8 /* ActionSheetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetHelper.swift; sourceTree = "<group>"; };
+		2CEB22D62A826DEE009ACDE8 /* ChangeSchedulePriorityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeSchedulePriorityController.swift; sourceTree = "<group>"; };
+		2CEB22D82A826E12009ACDE8 /* SchedulePriorityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePriorityView.swift; sourceTree = "<group>"; };
+		2CEB22DA2A826E23009ACDE8 /* SchedulePriorityView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchedulePriorityView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,8 @@
 			children = (
 				2C2B38E62A7A468A00520E96 /* AddScheduleView.swift */,
 				2C2B38E82A7A469B00520E96 /* AddScheduleView.xib */,
+				2CEB22D82A826E12009ACDE8 /* SchedulePriorityView.swift */,
+				2CEB22DA2A826E23009ACDE8 /* SchedulePriorityView.xib */,
 			);
 			path = AddSchedule;
 			sourceTree = "<group>";
@@ -156,6 +164,7 @@
 			children = (
 				2CC640562A6A8785005EDDC6 /* ScheduleViewController.swift */,
 				2C2B38E42A7A466300520E96 /* AddScheduleViewController.swift */,
+				2CEB22D62A826DEE009ACDE8 /* ChangeSchedulePriorityController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -245,6 +254,7 @@
 				2CEB22CE2A7D436B009ACDE8 /* sedgwick_co.ttf in Resources */,
 				2CA7ED792A6B9B1600301C06 /* ScheduleCollectionViewCell.xib in Resources */,
 				2C1AE0D92A51620A0019D435 /* LaunchScreen.storyboard in Resources */,
+				2CEB22DB2A826E23009ACDE8 /* SchedulePriorityView.xib in Resources */,
 				2CC6405B2A6A8863005EDDC6 /* ScheduleView.xib in Resources */,
 				2C1AE0D62A51620A0019D435 /* Assets.xcassets in Resources */,
 				2C1AE0D42A5162090019D435 /* Main.storyboard in Resources */,
@@ -265,7 +275,9 @@
 				2CC6405D2A6A88EF005EDDC6 /* ScheduleModel.swift in Sources */,
 				2CC640592A6A8824005EDDC6 /* ScheduleView.swift in Sources */,
 				2C2B38EE2A7A472600520E96 /* RealmUtil.swift in Sources */,
+				2CEB22D72A826DEE009ACDE8 /* ChangeSchedulePriorityController.swift in Sources */,
 				2C1AE0D12A5162090019D435 /* ViewController.swift in Sources */,
+				2CEB22D92A826E12009ACDE8 /* SchedulePriorityView.swift in Sources */,
 				2C1AE0CD2A5162090019D435 /* AppDelegate.swift in Sources */,
 				2CEB22D52A81E51A009ACDE8 /* ActionSheetHelper.swift in Sources */,
 				2C1AE0CF2A5162090019D435 /* SceneDelegate.swift in Sources */,
