@@ -12,10 +12,12 @@ final class AddScheduleViewController: UIViewController {
     private lazy var addScheduleView = AddScheduleView()
     private var realmUtil = RealmUtil.shared
     private var alertHelper = AlertHelper.shared
+    var editingData: ScheduleModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         registerSettings()
+        render()
     }
     
     override func loadView() {
@@ -29,15 +31,24 @@ final class AddScheduleViewController: UIViewController {
         addScheduleView.ThirdPlanTextField.delegate = self
     }
     
+    private func render(){
+        guard let schedule = editingData else {return}
+        addScheduleView.render(schedule: schedule)
+    }
+    
     @IBAction func tappedSaveButton(){
-        alertHelper.showAlertWithCancel(title: "保存しますか?", message: "選択してください", viewController: self) {
+        alertHelper.showAlertWithCancel(title: "保存しますか?", message: "選択してください", viewController: self) { [self] in
             let firstPlan: String = self.addScheduleView.FirstPlanTextField.text!
             let secondPlan: String = self.addScheduleView.SecondPlanTextField.text!
             let thirdPlan: String = self.addScheduleView.ThirdPlanTextField.text!
             let limit: TimeInterval = self.addScheduleView.limitTimeDatePicker.countDownDuration
             let startTime: Date = self.addScheduleView.startTimeDatePicker.date
             
-            self.realmUtil.addData(firstPlan: firstPlan, secondPlan: secondPlan, thirdPlan: thirdPlan, limit: limit, startTime: startTime)
+            if editingData == nil{
+                self.realmUtil.addData(firstPlan: firstPlan, secondPlan: secondPlan, thirdPlan: thirdPlan, limit: limit, startTime: startTime)
+            }else{
+                self.realmUtil.editData(obj: editingData!, firstPlan: firstPlan, secondPlan: secondPlan, thirdPlan: thirdPlan, limit: limit, startTime: startTime)
+            }
             
             let previousNC = self.presentingViewController as! UINavigationController
             let previousController = previousNC.viewControllers[previousNC.viewControllers.count - 1] as! ScheduleViewController

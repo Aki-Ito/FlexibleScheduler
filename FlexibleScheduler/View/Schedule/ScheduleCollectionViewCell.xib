@@ -49,12 +49,22 @@
                                     <action selector="pageControl:" destination="gTV-IL-0wX" eventType="valueChanged" id="YtN-om-bOm"/>
                                 </connections>
                             </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFK-tG-qvg">
+                                <rect key="frame" x="309.33333333333331" y="4.0000000000000018" width="25.666666666666686" height="25.666666666666671"/>
+                                <color key="tintColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="tappedDetailButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="mfP-8a-EMb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="pTp-z6-1fA" firstAttribute="centerX" secondItem="cbn-Wt-Rwt" secondAttribute="centerX" id="39q-Mw-tZO"/>
                             <constraint firstItem="aJy-UO-wMT" firstAttribute="top" secondItem="cbn-Wt-Rwt" secondAttribute="top" constant="8" id="BAG-r8-Evm"/>
+                            <constraint firstAttribute="trailing" secondItem="eFK-tG-qvg" secondAttribute="trailing" constant="8" id="Hg2-h6-pmY"/>
                             <constraint firstAttribute="bottom" secondItem="pTp-z6-1fA" secondAttribute="bottom" id="Ypp-KD-dtG"/>
+                            <constraint firstItem="eFK-tG-qvg" firstAttribute="top" secondItem="cbn-Wt-Rwt" secondAttribute="top" constant="4" id="bjy-M1-4yu"/>
                             <constraint firstItem="3O4-eF-IKh" firstAttribute="centerX" secondItem="cbn-Wt-Rwt" secondAttribute="centerX" id="erZ-EE-2B6"/>
                             <constraint firstItem="aJy-UO-wMT" firstAttribute="leading" secondItem="cbn-Wt-Rwt" secondAttribute="leading" constant="12" id="pKy-f1-oAP"/>
                             <constraint firstItem="3O4-eF-IKh" firstAttribute="centerY" secondItem="cbn-Wt-Rwt" secondAttribute="centerY" id="zKW-Zc-zYw"/>

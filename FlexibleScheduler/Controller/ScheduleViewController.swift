@@ -15,6 +15,7 @@ final class ScheduleViewController: UIViewController {
     private var realmUtil = RealmUtil.shared
     private var dateFormatUtil = DateFormatUtil.shared
     private var alertHelper = AlertHelper.shared
+    private var actionSheetHelper = ActionSheetHelper.shared
     private var fetchedData: Results<ScheduleModel>?
     private var cellHeight: CGFloat = 108
     let screenWidth = UIScreen.main.bounds.width
@@ -60,6 +61,17 @@ final class ScheduleViewController: UIViewController {
     }
     
     @IBAction func tappedAddButton(_ sender: Any) {
+        self.transferToAddView()
+    }
+    
+    @IBAction func tappedDeleteAllButton(_ sender: Any) {
+        alertHelper.showAlertWithCancel(title: "データを全て削除します", message: "次に進むとデータは全て消去されます", viewController: self) {
+            self.realmUtil.deleteAllData()
+            self.reloadData()
+        }
+    }
+    
+    private func transferToAddView(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nextController =  storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
         if let sheet = nextController.sheetPresentationController{
@@ -72,11 +84,20 @@ final class ScheduleViewController: UIViewController {
         present(nextController, animated: true)
     }
     
-    @IBAction func tappedDeleteAllButton(_ sender: Any) {
-        alertHelper.showAlertWithCancel(title: "データを全て削除します", message: "次に進むとデータは全て消去されます", viewController: self) {
-            self.realmUtil.deleteAllData()
-            self.reloadData()
+    private func transferToEditView(indexPath: IndexPath){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextController =  storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+        if let sheet = nextController.sheetPresentationController{
+            sheet.detents = [
+                .custom(resolver: { context in
+                    0.9 * context.maximumDetentValue
+                })
+            ]
         }
+        //MARK: 値渡し
+        let addController = nextController.viewControllers[0] as! AddScheduleViewController
+        addController.editingData = fetchedData?[indexPath.row]
+        present(nextController, animated: true)
     }
     
 }
@@ -90,7 +111,10 @@ extension ScheduleViewController: UICollectionViewDelegate,UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ScheduleCollectionViewCell
         cell.layer.cornerRadius = 10
-        cell.scheduleLabel.text = fetchedData?[indexPath.row].firstSchedule
+        let correspondingData = fetchedData?[indexPath.row]
+        cell.correspondingData = correspondingData
+        cell.scheduleLabel.text = correspondingData?.firstSchedule
+        cell.delegate = self
         let startTime = dateFormatUtil.dateFormat(date: fetchedData?[indexPath.row].startTime ?? Date())
         let endTime = ScheduleModel.caluculateTime(startTime: fetchedData?[indexPath.row].startTime ?? Date(), limit: fetchedData?[indexPath.row].limitTime ?? 0)
         cell.timeLabel.text = "\(startTime)~\(endTime)"
@@ -112,5 +136,25 @@ extension ScheduleViewController: UICollectionViewDelegateFlowLayout{
     //MARK: paddingの調整
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 24, left: 24, bottom: 24, right: 24)
+    }
+}
+
+extension ScheduleViewController: DetailActionDelegate{
+    func tappedDetail(cell: ScheduleCollectionViewCell) {
+        guard let collectionView = scheduleView.collectionView else {
+            return
+        }
+        if let indexPath = collectionView.indexPath(for: cell){
+            actionSheetHelper.showActionSheet(controller: self) {
+                
+            } changeSchedule: {
+                self.transferToEditView(indexPath: indexPath)
+            } deleteSchedule: {
+                self.alertHelper.showAlertWithCancel(title: "データ削除しますか", message: "元に戻せません", viewController: self) {
+                    guard let data = self.fetchedData else {return}
+                    self.realmUtil.deleteData(obj: data[indexPath.row])
+                }
+            }
+        }
     }
 }

@@ -26,9 +26,4 @@ extension ScheduleModel{
         let formatedEndTime: String = dateFormatUtil.dateFormat(date: endTime)
         return formatedEndTime
     }
-    
-    //MARK: スケジュール1~3をまとめて配列にしておく
-    static func makeScheduleArray(first: String, second: String, third: String) -> [String]{
-        return [first,second,third]
-    }
 }

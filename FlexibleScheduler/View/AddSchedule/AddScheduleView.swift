@@ -34,6 +34,14 @@ class AddScheduleView: UIView {
         backgroundView.layer.cornerRadius = 10
     }
     
+    public func render(schedule: ScheduleModel){
+        FirstPlanTextField.text = schedule.firstSchedule
+        SecondPlanTextField.text = schedule.secondSchedule
+        ThirdPlanTextField.text = schedule.thirdSchedule
+        limitTimeDatePicker.countDownDuration = schedule.limitTime
+        startTimeDatePicker.date = schedule.startTime
+    }
+    
     func loadNib() {
         if let view = Bundle(for: type(of: self)).loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?.first as? UIView {
             view.frame = self.bounds

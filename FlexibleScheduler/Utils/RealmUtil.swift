@@ -31,15 +31,13 @@ class RealmUtil{
     
     public func editData(obj: ScheduleModel, firstPlan: String, secondPlan:String, thirdPlan: String, limit: Double, startTime: Date){
         do{
-            obj.firstSchedule = firstPlan
-            obj.secondSchedule = secondPlan
-            obj.thirdSchedule = thirdPlan
-            obj.limitTime = limit
-            obj.startTime = startTime
-            
             let realm = try! Realm()
             try realm.write{
-                realm.add(obj)
+                obj.firstSchedule = firstPlan
+                obj.secondSchedule = secondPlan
+                obj.thirdSchedule = thirdPlan
+                obj.limitTime = limit
+                obj.startTime = startTime
             }
         }catch{
             print(error.localizedDescription)
