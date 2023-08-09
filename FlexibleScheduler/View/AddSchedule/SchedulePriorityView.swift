@@ -9,9 +9,6 @@ import UIKit
 class SchedulePriorityView: UIView {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var displayedData: [ScheduleModel] = []
-    typealias DataSourceType = UICollectionViewDiffableDataSource<Int, String>
-    private var dataSource: DataSourceType!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,11 +26,5 @@ class SchedulePriorityView: UIView {
             view.frame = self.bounds
             self.addSubview(view)
         }
-    }
-    
-    private func configureLayout(to collectionView: UICollectionView){
-        let configuration = UICollectionLayoutListConfiguration(appearance: .grouped)
-        let layout = UICollectionViewCompositionalLayout.list(using: configuration)
-        collectionView.collectionViewLayout = layout
     }
 }
