@@ -171,6 +171,7 @@ extension ScheduleViewController: DetailActionDelegate{
                 self.alertHelper.showAlertWithCancel(title: "データ削除しますか", message: "元に戻せません", viewController: self) {
                     guard let data = self.fetchedData else {return}
                     self.realmUtil.deleteData(obj: data[indexPath.row])
+                    self.reloadData()
                 }
             }
         }
