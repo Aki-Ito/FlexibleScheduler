@@ -26,4 +26,9 @@ extension ScheduleModel{
         let formatedEndTime: String = dateFormatUtil.dateFormat(date: endTime)
         return formatedEndTime
     }
+    
+    //MARK: 1つの時間のスケジュールをまとめてしまう
+    static func summarizeSchedule(first: String, second: String, third: String) -> [String]{
+        return [first,second,third]
+    }
 }

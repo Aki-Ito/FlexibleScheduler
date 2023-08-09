@@ -100,6 +100,24 @@ final class ScheduleViewController: UIViewController {
         present(nextController, animated: true)
     }
     
+    private func transferToPriorityView(indexPath: IndexPath){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextController =  storyboard.instantiateViewController(withIdentifier: "SecondNavigationController") as! UINavigationController
+        if let sheet = nextController.sheetPresentationController{
+            sheet.detents = [
+                .custom(resolver: { context in
+                    0.4 * context.maximumDetentValue
+                })
+            ]
+        }
+        //MARK: 値渡し
+        let priorityController = nextController.viewControllers[0] as! ChangeSchedulePriorityController
+        if let data = fetchedData?[indexPath.row]{
+            priorityController.displayedSchedule = data
+        }
+        present(nextController, animated: true)
+    }
+    
 }
 
 extension ScheduleViewController: UICollectionViewDelegate,UICollectionViewDataSource{
@@ -146,7 +164,7 @@ extension ScheduleViewController: DetailActionDelegate{
         }
         if let indexPath = collectionView.indexPath(for: cell){
             actionSheetHelper.showActionSheet(controller: self) {
-                
+                self.transferToPriorityView(indexPath: indexPath)
             } changeSchedule: {
                 self.transferToEditView(indexPath: indexPath)
             } deleteSchedule: {
